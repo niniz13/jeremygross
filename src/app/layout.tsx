@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Figtree } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -53,7 +54,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
